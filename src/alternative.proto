@@ -7,4 +7,5 @@ message Alternative {
   string url = 2;
   string description = 3;
   string category = 4;
+  bool bypass_paywall = 5;
 }

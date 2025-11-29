@@ -1,5 +1,8 @@
 # NoTube Proto
 
+TODO:
+ - [ ] Add required/optional fields to proto files
+
 This repository contains the Protocol Buffer definitions and build pipeline for the **NoTube** project's data models. It serves as the single source of truth for the schema (specifically "Alternatives") and automatically generates and publishes client libraries for JavaScript and Dart.
 
 ## Structure
