@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
@@ -22,12 +22,14 @@ class Alternative extends $pb.GeneratedMessage {
     $core.String? url,
     $core.String? description,
     $core.String? category,
+    $core.bool? bypassPaywall,
   }) {
     final result = create();
     if (title != null) result.title = title;
     if (url != null) result.url = url;
     if (description != null) result.description = description;
     if (category != null) result.category = category;
+    if (bypassPaywall != null) result.bypassPaywall = bypassPaywall;
     return result;
   }
 
@@ -48,6 +50,7 @@ class Alternative extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'url')
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..aOS(4, _omitFieldNames ? '' : 'category')
+    ..aOB(5, _omitFieldNames ? '' : 'bypassPaywall')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -104,6 +107,15 @@ class Alternative extends $pb.GeneratedMessage {
   $core.bool hasCategory() => $_has(3);
   @$pb.TagNumber(4)
   void clearCategory() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get bypassPaywall => $_getBF(4);
+  @$pb.TagNumber(5)
+  set bypassPaywall($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasBypassPaywall() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearBypassPaywall() => $_clearField(5);
 }
 
 const $core.bool _omitFieldNames =
