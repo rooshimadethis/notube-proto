@@ -72,7 +72,8 @@ proto.notube.v1.Alternative.toObject = function(includeInstance, msg) {
 title: jspb.Message.getFieldWithDefault(msg, 1, ""),
 url: jspb.Message.getFieldWithDefault(msg, 2, ""),
 description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-category: jspb.Message.getFieldWithDefault(msg, 4, "")
+category: jspb.Message.getFieldWithDefault(msg, 4, ""),
+bypassPaywall: jspb.Message.getBooleanFieldWithDefault(msg, 5, false)
   };
 
   if (includeInstance) {
@@ -124,6 +125,10 @@ proto.notube.v1.Alternative.deserializeBinaryFromReader = function(msg, reader) 
     case 4:
       var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCategory(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setBypassPaywall(value);
       break;
     default:
       reader.skipField();
@@ -179,6 +184,13 @@ proto.notube.v1.Alternative.serializeBinaryToWriter = function(message, writer) 
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getBypassPaywall();
+  if (f) {
+    writer.writeBool(
+      5,
       f
     );
   }
@@ -254,6 +266,24 @@ proto.notube.v1.Alternative.prototype.getCategory = function() {
  */
 proto.notube.v1.Alternative.prototype.setCategory = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional bool bypass_paywall = 5;
+ * @return {boolean}
+ */
+proto.notube.v1.Alternative.prototype.getBypassPaywall = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.notube.v1.Alternative} returns this
+ */
+proto.notube.v1.Alternative.prototype.setBypassPaywall = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 
